@@ -1,7 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, UserButton, auth } from "@clerk/nextjs";
-import { db } from "@/library/db";
+import { sql } from "@vercel/postgres";
+import CreateProfile from "@/components/CreateProfile";
+// db from SUPABASE currently offline
+// import { db } from "@/library/db";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +16,10 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const { userId } = auth();
-  const profilesResults = await db.query(
-    `SELECT * from profiles WHERE clerk_user_id = ${userId}`
-  );
+  // change sql to db for SUPABASE: const profilesResults = await db.query(
+  const profilesResults =
+    await sql`SELECT * from profiles WHERE clerk_user_id = ${userId}`;
+
   return (
     <ClerkProvider>
       <html lang="en">
@@ -24,7 +28,10 @@ export default async function RootLayout({ children }) {
             <UserButton afterSignOutUrl="/" />
           </div>
           <h1>Movie Discussions</h1>
-          {children}
+          {/* checks if user has a Clark profile in the database */}
+          {profilesResults.rowCount !== 0 && children}
+          {/* direct user to create a profile if not existing in Clark */}
+          {profilesResults.rowCount === 0 && <CreateProfile />}
         </body>
       </html>
     </ClerkProvider>
