@@ -1,0 +1,27 @@
+CREATE TABLE profiles (
+  id SERIAL PRIMARY KEY,
+  clerk_user_id VARCHAR(255),
+  Username VARCHAR(255),
+  bio TEXT,
+  location TEXT
+);
+
+CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  content TEXT,
+  profile_id VARCHAR(255)
+);
+
+INSERT INTO posts (title, content, profile_id) VALUES
+('Hot Fuzz', 'Hands down the best comedy ever made', '1'),
+('Riddik', 'Before Vin Diesel drove cars he did great movies', '2'),
+('The Gentleman', 'Another great Guy Richie movie', '3');
+
+INSERT INTO posts (clerk_user_id, Username, bio, location) VALUES
+('1', 'Moses', 'Moses Palam mate, best rapper in town', 'NYC'),
+('2', 'David', 'Student, vegan and cookiefarmer', 'London'),
+('3', 'Uriel', 'Your dreams are mine', 'Underworld');
+
+Supadoopa password
+hNG73L9O7hcSgUkN
