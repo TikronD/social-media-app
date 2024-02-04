@@ -8,7 +8,8 @@ export default function Header() {
         <h1>Movie Discussion</h1>
         <nav>
           <Link href="/">Home</Link>
-          <Link href="/posts">Make a Post</Link>
+          <Link href="/blogs">My blogs</Link>
+          <Link href="/allblogs">All blogs</Link>
         </nav>
       </header>
     </div>

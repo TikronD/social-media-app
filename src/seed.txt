@@ -19,6 +19,20 @@ CREATE TABLE posts_likes (
   profile_id VARCHAR(255)
 );
 
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  profile_id VARCHAR(255),
+  content VARCHAR(255),
+  post_id VARCHAR(255)
+);
+
+CREATE TABLE blogs (
+    id SERIAL PRIMARY KEY, 
+    title text, 
+    content text, 
+    profile_id INTEGER References profiles(id)
+);
+
 INSERT INTO posts (title, content, profile_id) VALUES
 ('Hot Fuzz', 'Hands down the best comedy ever made', '1'),
 ('Riddik', 'Before Vin Diesel drove cars he did great movies', '2'),

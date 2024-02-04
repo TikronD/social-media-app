@@ -1,7 +1,7 @@
 "use client";
 import { useFormStatus } from "react-dom";
 
-export default function AddPostButton() {
+export default function AddBlogButton() {
   const { pending } = useFormStatus();
 
   return (
