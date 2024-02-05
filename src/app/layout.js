@@ -23,13 +23,11 @@ export default function RootLayout({ children }) {
           <Theme>
             <Header />
             <main>
-              <h1>Movie Discussion Forum</h1>
-              <Link href="/">
-                <h2>Home</h2>
-              </Link>
-              {userId && <UserButton afterSignOutUrl="/" />}
-              {!userId && <Link href="/sign-in">Sign in</Link>}
-              {children}
+              <section>
+                {userId && <UserButton afterSignOutUrl="/" />}
+                {!userId && <Link href="/sign-in">Sign in</Link>}
+                {children}
+              </section>
             </main>
             <Footer />
             {/* <ThemePanel /> */}

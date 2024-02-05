@@ -21,9 +21,15 @@ body {
 main {
   padding: 2rem 7%;
   min-height: 70vh;
+  display: flex;
 }
 .title {
   display: flex;
+}
+
+section {
+  display: flex;
+  gap: 1rem;
 }
 
 .detail {
