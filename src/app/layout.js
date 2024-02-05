@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 
 import { Montserrat } from "next/font/google";
-const inter = Montserrat({ subsets: ["latin"], weight: "100" });
+const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "Social Network App",
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body className={montserrat.className}>
           <Theme>
             <Header />
             <main>
