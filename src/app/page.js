@@ -1,7 +1,8 @@
 import { auth } from "@clerk/nextjs";
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
-import PopOver from "./components/Popover";
+// import * as Separator from "@radix-ui/react-separator";
+// <Separator.Root className="SeparatorRoot" style={{ margin: '15px 0' }} />
 
 export default async function Home() {
   const { userId } = auth();
@@ -19,7 +20,7 @@ export default async function Home() {
       )}
       {userId && user.rowCount !== 0 && (
         <div>
-          <PopOver />
+          <Link href="/profile">My profile</Link>
         </div>
       )}
     </>

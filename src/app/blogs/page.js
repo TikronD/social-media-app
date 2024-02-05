@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import AddBlogButton from "../components/AddBlogButton";
 
 export default async function BlogPage() {
   const { userId } = auth();
@@ -37,7 +38,7 @@ export default async function BlogPage() {
             <h2>Create New Blog post</h2>
             <input name="title" placeholder="Name of blog" />
             <textarea name="content" placeholder="write your blog"></textarea>
-            <button>Submit</button>
+            <AddBlogButton />
           </form>
           <div>
             <h3>My Blog Posts</h3>

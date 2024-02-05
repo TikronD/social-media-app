@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import SubmitButton from "../components/SubmitButton";
 
 export default async function Profile() {
   const { userId } = auth();
@@ -15,7 +16,7 @@ export default async function Profile() {
     const bio = formData.get("bio");
     const location = formData.get("location");
 
-    await sql`INSERT INTO profiles (clerk_user_id, username, bio, location) VALUES (${userId}, ${username}, ${bio} ${location}) `;
+    await sql`INSERT INTO profiles (clerk_user_id, username, bio, location) VALUES (${userId}, ${username}, ${bio}, ${location}) `;
     revalidatePath("/profile");
   }
   return (
@@ -34,6 +35,7 @@ export default async function Profile() {
           <div className="username-bio">
             <h4>{`Username: ${user.rows[0].username}`}</h4>
             <h4>{`Bio: ${user.rows[0].bio}`}</h4>
+            <h4>{`Location: ${user.rows[0].location}`}</h4>
           </div>
           <Link href="/blogs">
             <p>My Blogs</p>

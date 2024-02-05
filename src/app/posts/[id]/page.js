@@ -3,7 +3,6 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import "./addpost.css";
 import { redirect } from "next/navigation";
-// import Link from "next/link";
 
 export default async function AddComment({ params }) {
   const collection =

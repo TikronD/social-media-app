@@ -1,12 +1,12 @@
 import "./globals.css";
 import { ClerkProvider, UserButton, auth } from "@clerk/nextjs";
 import Link from "next/link";
-// import Footer from "@/components/Footer";
-// import Header from "@/components/Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 
-import { Lato } from "next/font/google";
-const inter = Lato({ subsets: ["latin"], weight: "100" });
+import { Montserrat } from "next/font/google";
+const inter = Montserrat({ subsets: ["latin"], weight: "100" });
 
 export const metadata = {
   title: "Social Network App",
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           <Theme>
-            {/* <Header /> */}
+            <Header />
             <main>
               <h1>Movie Discussion Forum</h1>
               <Link href="/">
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
               {!userId && <Link href="/sign-in">Sign in</Link>}
               {children}
             </main>
-            {/* <Footer /> */}
+            <Footer />
             {/* <ThemePanel /> */}
           </Theme>
         </body>
