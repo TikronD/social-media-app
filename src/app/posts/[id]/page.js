@@ -1,4 +1,4 @@
-import AddPostButton from "@/components/AddPostButton";
+import AddBlogButton from "@/components/AddBlogButton";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import "./addpost.css";
@@ -27,7 +27,7 @@ export default async function AddComment({ params }) {
         <input name="title" id="title" placeholder="Title of movie" />
         <label htmlFor="content">Your Message:</label>
         <textarea name="content" placeholder="content" />
-        <AddPostButton />
+        <AddBlogButton />
       </form>
     </div>
   );
