@@ -1,8 +1,8 @@
-import AddBlogButton from "@/components/AddBlogButton";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import "./addpost.css";
 import { redirect } from "next/navigation";
+import AddBlogButton from "@/app/components/AddBlogButton";
 
 export default async function AddComment({ params }) {
   const collection =
