@@ -17,7 +17,7 @@ const ToastDemo = () => {
   return (
     <Toast.Provider swipeDirection="right">
       <button
-        className="Button large violet"
+        className="button large violet"
         onClick={() => {
           setOpen(false);
           window.clearTimeout(timerRef.current);

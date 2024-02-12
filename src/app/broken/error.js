@@ -6,7 +6,7 @@ export default function Error({ error, reset }) {
     <div>
       <h2>404 Error</h2>
       <p>{error.message}</p>
-      <Link href="/">Back to my seat</Link>;<Button onClick href="/"></Button>
+      <Link href="/">Back to my seat</Link>;<button onClick href="/"></button>
     </div>
   );
 }
